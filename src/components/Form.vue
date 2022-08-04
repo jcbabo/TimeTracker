@@ -30,7 +30,8 @@ export default defineComponent({
   name: "Formulario",
   data () {
     return {
-      timeInSeconds: 0
+      timeInSeconds: 0,
+      counter: 0
     }
   },
 
@@ -42,12 +43,12 @@ export default defineComponent({
 
   methods: {
     startCounter() {
-      setInterval(() => {
+      this.counter = setInterval(() => {
         this.timeInSeconds += 1 
       }, 1000)  
     },
     stopCounter() {
-      console.log("pausando...")
+      clearInterval(this.counter)
     },
   }
 })
