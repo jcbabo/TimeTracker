@@ -18,7 +18,6 @@ export default defineComponent({
 header {
   padding: 1rem;
   background: #0d3b66;
-  width: 170px;
   height: 100vh;
   text-align: center;
 }
