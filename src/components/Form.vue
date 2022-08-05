@@ -3,19 +3,8 @@
     <div class="column input-counter-box">
       <div class="column counter-area-btns" role="form" aria-label="Área para criação de novas tarefas">
         <input type="text" class="input" placeholder="Digite uma tarefa para inciar." />
-        <Chronometer :timeInSeconds="timeInSeconds"/>
-        <button class="button" @click="startCounter">
-          <span class="icon">
-            <i class="fas fa-play"></i>
-          </span>
-          <span>play</span>
-        </button>
-        <button class="button" @click="stopCounter">
-          <span class="icon">
-            <i class="fas fa-stop"></i>
-          </span>
-          <span>stop</span>
-        </button>
+        <Chronometer :timeInSeconds="timeInSeconds" />
+        <Timer />
       </div>
     </div>
   </div>
@@ -24,26 +13,16 @@
 
 import { defineComponent } from "vue";
 import Chronometer from "./Chronometer.vue";
+import Timer from "./Timer.vue";
 
 export default defineComponent({
-    name: "Formulario",
-    data() {
-        return {
-            timeInSeconds: 0,
-            counter: 0
-        };
-    },
-    methods: {
-        startCounter() {
-            this.counter = setInterval(() => {
-                this.timeInSeconds += 1;
-            }, 1000);
-        },
-        stopCounter() {
-            clearInterval(this.counter);
-        },
-    },
-    components: { Chronometer }
+  name: "Formulario",
+  components: { Chronometer, Timer },
+  data() {
+    return {
+      timeInSeconds: 0,
+    };
+  },
 })
 
 </script>
@@ -69,5 +48,4 @@ section {
   display: flex;
   font-size: x-large;
 }
-
 </style>
