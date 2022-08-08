@@ -3,7 +3,6 @@
     <div class="column input-counter-box">
       <div class="column counter-area-btns" role="form" aria-label="Área para criação de novas tarefas">
         <input type="text" class="input" placeholder="Digite uma tarefa para inciar." />
-        <Chronometer :timeInSeconds="timeInSeconds" />
         <Timer />
       </div>
     </div>
@@ -18,11 +17,6 @@ import Timer from "./Timer.vue";
 export default defineComponent({
   name: "Formulario",
   components: { Chronometer, Timer },
-  data() {
-    return {
-      timeInSeconds: 0,
-    };
-  },
 })
 
 </script>

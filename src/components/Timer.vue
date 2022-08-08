@@ -1,4 +1,5 @@
 <template>
+  <Chronometer :timeInSeconds="timeInSeconds"/>
   <TimerBtn @click="startCounter">
     <template v-slot:icon>
       <i class="fas fa-play"></i>
@@ -19,9 +20,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import TimerBtn from './TimerBtn.vue';
+import Chronometer from './Chronometer.vue';
+
 export default defineComponent({
   name: "Timer",
-  components: { TimerBtn },
+  components: { TimerBtn, Chronometer },
   data() {
     return {
       timeInSeconds: 0,
