@@ -14,4 +14,7 @@ export default defineComponent({
 })
 </script>
 <style>
+.button {
+  width: 95px !important;
+}
 </style>

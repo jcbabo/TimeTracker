@@ -1,6 +1,9 @@
 <template>
   <Chronometer :timeInSeconds="timeInSeconds"/>
-  <TimerBtn @click="startCounter">
+  <TimerBtn
+    @click="startCounter"
+    :disabled="timeRunning"
+  >
     <template v-slot:icon>
       <i class="fas fa-play"></i>
     </template>
@@ -8,7 +11,21 @@
       <span>play</span>
     </template>
   </TimerBtn>
-  <TimerBtn @click="stopCounter">
+  <TimerBtn
+    @click="pauseConter"
+    :disabled="!timeRunning"
+  >
+    <template v-slot:icon>
+      <i class="fas fa-pause"></i>
+    </template>
+    <template v-slot:text>
+      <span>pause</span>
+    </template>
+  </TimerBtn>
+  <TimerBtn
+    @click="stopCounter"
+    :disabled="!timeRunning"
+  >
     <template v-slot:icon>
       <i class="fas fa-stop"></i>
     </template>
@@ -29,14 +46,21 @@ export default defineComponent({
     return {
       timeInSeconds: 0,
       counter: 0,
+      timeRunning: false,
     }
   },
   methods: {
     startCounter() {
       this.counter = setInterval(() => { this.timeInSeconds += 1 }, 1000);
+      this.timeRunning = true;
+    },
+    pauseConter() {
+      clearInterval(this.counter);
+      this.timeRunning = false;
     },
     stopCounter() {
       clearInterval(this.counter);
+      this.timeRunning = false;
     },
   },
 })
