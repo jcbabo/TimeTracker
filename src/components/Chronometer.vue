@@ -1,6 +1,6 @@
 <template>
   <section>
-    <strong>{{ elapsedTime }}</strong>
+    {{ elapsedTime }}
   </section>
 </template>
 <script lang="ts">
@@ -23,7 +23,7 @@ export default defineComponent({
 })
 </script>
 <style scoped>
-strong {
-  color: #FF0000 !important;
+section {
+  font-size: 1rem;
 }
 </style>

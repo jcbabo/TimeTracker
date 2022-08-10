@@ -1,5 +1,8 @@
 <template>
-  <Chronometer :timeInSeconds="timeInSeconds"/>
+  <Chronometer
+    :timeInSeconds="timeInSeconds"
+    :class="{ textStyle: true }"
+  />
   <TimerBtn
     @click="startCounter"
     :disabled="timeRunning"
@@ -41,7 +44,15 @@ import Chronometer from './Chronometer.vue';
 
 export default defineComponent({
   name: "Timer",
-  components: { TimerBtn, Chronometer },
+
+  components: {
+    TimerBtn,
+    Chronometer
+  },
+  emits: [
+    'timerFinished'
+  ],
+
   data() {
     return {
       timeInSeconds: 0,
@@ -49,21 +60,31 @@ export default defineComponent({
       timeRunning: false,
     }
   },
+  
   methods: {
     startCounter() {
       this.counter = setInterval(() => { this.timeInSeconds += 1 }, 1000);
       this.timeRunning = true;
     },
+  
     pauseConter() {
       clearInterval(this.counter);
       this.timeRunning = false;
     },
+    
     stopCounter() {
       clearInterval(this.counter);
       this.timeRunning = false;
+      this.$emit('timerFinished', this.timeInSeconds)
+      this.timeInSeconds = 0
     },
   },
 })
 </script>
 <style>
+.textStyle {
+  color: #FF0000 ;
+  font-weight: 700;
+  font-size: 1.5rem !important;
+}
 </style>
