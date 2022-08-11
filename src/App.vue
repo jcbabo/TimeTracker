@@ -1,9 +1,9 @@
 <template>
-  <main class="columns is-gapless is-multiline">
+  <main class="columns is-gapless is-multiline dark-mode">
     <div class="column">
       <SideBarr />
     </div>
-    <div class="column is-10">
+    <div class="column is-10 div-content">
       <Form @toSaveTasks="saveTasks" />
       <div class="list">
         <Task v-for="(task, index) in tasks"
@@ -46,6 +46,14 @@ export default defineComponent({
 </script>
 
 <style>
+main {
+  height: 100vh;
+}
+
+.div-content {
+  background-color: var(--bg-primary);
+}
+
 .list {
   padding: 1.25rem;
 }

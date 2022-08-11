@@ -8,7 +8,7 @@
     :disabled="timeRunning"
   >
     <template v-slot:icon>
-      <i class="fas fa-play"></i>
+      <i class="fas fa-play" aria-hidden="true"></i>
     </template>
     <template v-slot:text>
       <span>play</span>
@@ -19,7 +19,7 @@
     :disabled="!timeRunning"
   >
     <template v-slot:icon>
-      <i class="fas fa-pause"></i>
+      <i class="fas fa-pause" aria-hidden="true"></i>
     </template>
     <template v-slot:text>
       <span>pause</span>
@@ -30,7 +30,7 @@
     :disabled="!timeRunning"
   >
     <template v-slot:icon>
-      <i class="fas fa-stop"></i>
+      <i class="fas fa-stop" aria-hidden="true"></i>
     </template>
     <template v-slot:text>
       <span>stop</span>
@@ -83,7 +83,7 @@ export default defineComponent({
 </script>
 <style>
 .textStyle {
-  color: #FF0000 ;
+  color: #3d464d;
   font-weight: 700;
   font-size: 1.5rem !important;
 }

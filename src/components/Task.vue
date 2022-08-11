@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <div class="columns">
-      <div class="column is-7">{{ task.description }}</div>
+      <div class="column is-10">{{ task.description }}</div>
       <div class="column">
         <Chronometer
           :timeInSeconds="task.durationInSeconds"
@@ -25,7 +25,7 @@ export default defineComponent({
       type: Object as PropType<ITask>,
       required: true,
     }
-  }
+  },
 })
 </script>
 
@@ -33,7 +33,7 @@ export default defineComponent({
 
 .box {
   font-weight: bold;
-  background: #e2c395;
-  color: #9d403b;
+  background: #333333;
+  color: #c0c0c0;
 }
 </style>

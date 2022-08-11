@@ -1,8 +1,7 @@
 <template>
-  <div class="box">
+  <div class="box bg-form">
     <div class="column input-counter-box">
-      <div
-        class="column counter-area-btns"
+      <div class="column counter-area-btns"
         role="form"
         aria-label="Área para criação de novas tarefas"
       >
@@ -12,7 +11,7 @@
           placeholder="Digite uma tarefa para inciar."
           v-model="description"
         />
-        <Timer @timerFinished="finishTask"/>
+        <Timer @timerFinished="finishTask" />
       </div>
     </div>
   </div>
@@ -25,7 +24,7 @@ import Timer from "./Timer.vue";
 
 export default defineComponent({
   name: "Form",
-  
+
   components: {
     Chronometer,
     Timer,
@@ -55,6 +54,9 @@ export default defineComponent({
 </script>
 
 <style>
+.bg-form {
+  background-color: #edf1f2;
+}
 
 .input-counter-box,
 .counter-area-btns {

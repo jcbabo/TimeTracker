@@ -17,8 +17,8 @@ export default defineComponent({
 <style>
 header {
   padding: 1rem;
-  background: #58533f;
-  height: 100vh;
+  background: #222629;
+  min-height: 100%;
   text-align: center;
 }
 @media only screen and (max-width: 768px) {
