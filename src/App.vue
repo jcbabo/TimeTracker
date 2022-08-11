@@ -50,10 +50,6 @@ main {
   height: 100vh;
 }
 
-.div-content {
-  background-color: var(--bg-primary);
-}
-
 .list {
   padding: 1.25rem;
 }
